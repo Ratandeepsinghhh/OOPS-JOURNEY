@@ -1,4 +1,4 @@
-// single inheritance 
+// multlevel inheritance
 #include<iostream>
 using namespace std;
 class animal{
@@ -13,11 +13,19 @@ class dog : public animal {                    // class dog is derived class whi
             cout<<"barking..."<<endl;
         }
 };
+class babydog : public dog{                   // class babydog is derived class 2 which inherits class dog publically 
+    public:
+    void weep(){
+        cout<<"weeping..."<<endl;
+    }
+};
 
 
 
 int main(){
-    dog mydog;
+    babydog mydog;
     mydog.eat();
     mydog.bark();
+    mydog.weep();
+    return 0;
 }
